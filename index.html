@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8" />
+    <meta name="" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="team falcon status display page"/>
+		<title>Sorting and Searching html Table</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Courgette&family=Sonsie+One&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<style>
+		.fail {
+			text-decoration: line-through;
+		}
+		.header {
+			font-family: 'Sonsie One', cursive;
+		}
+	</style>
+	<body>
+		<section class="container-fluid bg-success text-light p-3">
+			<h1 class="text-center header">TEAM FALCON</h1>
+		</section>
+		<div class="bg-light text-center p-4 py-5 border-bottom">
+			<div class="col-md-6 mx-auto">
+				<input
+					type="text"
+					id="search-name"
+					placeholder="Search your name: (E.g Chigbogu Ojri)"
+					aria-placeholder="Search your name"
+					class="form-control"
+				/>
+			</div>
+			<button
+				type="button"
+				class="btn btn-outline-danger mt-3 btn-lg"
+				id="sort-list"
+			>
+				Sort List Alphabetically
+			</button>
+		</div>
+		<section class="row no-gutters">
+			<div class="col-11 col-md-10 mx-auto my-5 table-responsive">
+				<table
+					id="status-list"
+					class="table table-hover table-striped"
+				></table>
+			</div>
+		</section>
+
+		<script src="/scripts/data-samples.js"></script>
+		<script src="/scripts/table-construct.js"></script>
+		<script src="/scripts/sort-table.js"></script>
+		<script src="/scripts/search-table.js"></script>
+
+		<script type="text/javascript">
+			let passed = document.querySelectorAll('.pass')
+			let fail = document.querySelectorAll('.fail')
+
+			Array.from(passed).forEach(elem =>
+				elem.classList.add('text-success')
+			)
+			Array.from(fail).forEach(elem => elem.classList.add('text-danger'))
+		</script>
+	</body>
+</html>
